@@ -1,3 +1,4 @@
+#function to get file meta data for new HISE system
 #' Title
 #'
 #' @param descriptors
@@ -7,9 +8,9 @@
 #' @export
 #'
 #' @examples
-fileDescToDataframe <- function(descriptors,
-                                keep_labs = FALSE) {
-
+fileDescToDataframe_beta <- function(descriptors,
+                                     keep_labs = FALSE) {
+  descriptors<-descriptors[[1]]
   assertthat::assert_that(typeof(descriptors) == "list")
   assertthat::assert_that(typeof(keep_labs) == "logical")
 
