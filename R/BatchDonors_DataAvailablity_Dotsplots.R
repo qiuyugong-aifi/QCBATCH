@@ -7,8 +7,8 @@
 #' @export
 #'
 #' @examples
-BatchDonors_DataAvailablity_Dotsplots <- function(BR1_rna_file, meta_data = "sample.visitName") {
-  plot_info <- BR1_rna_file %>%
+BatchDonors_DataAvailablity_Dotsplots <- function(rna_dataframe, meta_data = "sample.visitName") {
+  plot_info <- rna_dataframe %>%
     dplyr::select((!!as.name(meta_data)), subject.subjectGuid, file.batchID)
 
   dot_shapes <- factor(plot_info[, meta_data])
