@@ -26,5 +26,4 @@ Imports:
     pheatmap,
     lme4,
     stringr,
-    hise,
     hablar
