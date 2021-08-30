@@ -1,13 +1,13 @@
 Package: QCBATCH
-Title: What the Package Does (One Line, Title Case)
+Title: This packages is used to perform QC of bacth effect
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Gong",
+           family = "Qiuyu",
            role = c("aut", "cre"),
            email = "first.last@example.com",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: What the package does (A packages that allow user to quickly check the batch effect on their selected samples).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true

@@ -23,7 +23,7 @@ Merge_Dataset <- function(BR1_rna_file, filePath = "filePath", Bridging_Control 
       }
     }
 
-    if (!grepl("IMM", rna_desc_IMM$filePath[1], fixed = FALSE)) {
+    if (!grepl("IMM", BR1_rna_file$filePath[1], fixed = FALSE)) {
       sample_name <- NULL
       for (i in str_split(BR1_rna_file$filePath, "_")) {
         sample_name <- c(sample_name, i[(startsWith(i, "P"))])
