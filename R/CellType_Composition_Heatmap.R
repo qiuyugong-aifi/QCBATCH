@@ -25,7 +25,7 @@ CellType_Composition_Heatmap <- function(combined_dataset, cell_type = "seurat_p
 
 
   p <- pheatmap(cell_composition,
-    scale = "none", cluster_rows = F, cluster_cols = F, show_rownames = T, ,
+    scale = "none", cluster_rows = F, cluster_cols = F, show_rownames = T,
     cellheight = 20,
     border = "white"
   )
