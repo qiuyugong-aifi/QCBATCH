@@ -17,3 +17,14 @@ Suggests:
     covr,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Imports: 
+    tidyr,
+    dplyr,
+    tibble,
+    ggplot2,
+    Seurat,
+    pheatmap,
+    lme4,
+    stringr,
+    hise,
+    hablar
