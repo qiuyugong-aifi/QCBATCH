@@ -9,6 +9,7 @@
 #' @examples
 fileDescToDataframe <- function(descriptors,
                                 keep_labs = FALSE) {
+  descriptors<-descriptors[[1]]
 
   assertthat::assert_that(typeof(descriptors) == "list")
   assertthat::assert_that(typeof(keep_labs) == "logical")
