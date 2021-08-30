@@ -8,7 +8,7 @@
 #'
 #' @examples
 StableGenes_UMAP_plot <- function(Combined_dataset, n_PCs = 30) {
-  var_gene <- intersect(mylist[[2]]$gene, rownames(Combined_dataset@assays$RNA@data))
+  var_gene <- intersect(Stable_gene$gene, rownames(Combined_dataset@assays$RNA@data))
   Combined_dataset <- NormalizeData(Combined_dataset, normalization.method = "LogNormalize", scale.factor = 10000)
   Combined_dataset <- FindVariableFeatures(Combined_dataset)
   Combined_dataset_Stable <- ScaleData(Combined_dataset, features = var_gene)

@@ -28,3 +28,5 @@ Imports:
     stringr,
     hablar,
     plotly
+Depends: 
+    R (>= 2.10)
