@@ -12,7 +12,7 @@ fetch_bridging_control<-function() {
   rna_desc_IMM <- getFileDescriptors(
     fileType = "scRNA-seq-labeled",
     filter = filter_list)
-  rna_desc_IMM <- fileDescToDataframe(rna_desc_IMM)
+  rna_desc_IMM <- fileDescToDataframe_beta(rna_desc_IMM)
 
   selected_IMM <- cacheFiles(list(rna_desc_IMM$file.id))
   rna_desc_IMM <- fileDescToDataframe(selected_IMM)
