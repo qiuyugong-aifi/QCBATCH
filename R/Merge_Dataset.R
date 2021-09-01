@@ -46,7 +46,7 @@ Merge_Dataset<- function(rna_dataframe,filePath='filePath',Bridging_Control="FAL
 
   if (Bridging_Control=="TRUE"){
     rna_desc_IMM<-fetch_bridging_control()
-    rna_desc_IMM_SUBSET<-rna_desc_IMM %>% filter (file.batchID %in% BR1_rna_file$file.batchID)
+    rna_desc_IMM_SUBSET<-rna_desc_IMM %>% filter (file.batchID %in% rna_dataframe$file.batchID)
     for (i in 1:dim(rna_desc_IMM_SUBSET)[1]){
 
       single_object <- read_h5_seurat(rna_desc_IMM_SUBSET$filePath[i],
