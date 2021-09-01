@@ -24,8 +24,8 @@ CellNumber_Batch_Boxplot <- function(combined_dataset, group = "batch_id", sampl
         axis.title.y = element_text(size = 20), axis.text.y = element_text(size = 20)
       )
   } else if (plotly == "True") {
-    p <- plot_ly(x = batch_number %>% select((!!as.name(group))) %>% pull(), y = batch_number %>% select(Freq) %>% pull(), type = "box") %>%
-      plotly::add_trace(text = batch_number %>% select((!!as.name(sample_id))) %>% pull(), type = "scatter", mode = "markers", marker = list(size = 8), showlegend = F)
+    p <- plot_ly(x = batch_number %>% dplyr::select((!!as.name(group))) %>% dplyr::pull(), y = batch_number %>% dplyr::select(Freq) %>% pull(), type = "box") %>%
+      plotly::add_trace(text = batch_number %>% dplyr::select((!!as.name(sample_id))) %>% dplyr::pull(), type = "scatter", mode = "markers", marker = list(size = 8), showlegend = F)
   }
 
 
