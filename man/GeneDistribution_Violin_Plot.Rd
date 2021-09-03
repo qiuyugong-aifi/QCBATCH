@@ -4,10 +4,10 @@
 \alias{GeneDistribution_Violin_Plot}
 \title{Title}
 \usage{
-GeneDistribution_Violin_Plot(combined_dataset)
+GeneDistribution_Violin_Plot(combined_dataset, plotly = "False")
 }
 \arguments{
-\item{combined_dataset}{}
+\item{plotly}{}
 }
 \value{
 
