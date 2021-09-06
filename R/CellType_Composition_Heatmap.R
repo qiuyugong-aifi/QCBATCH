@@ -24,10 +24,10 @@ CellType_Composition_Heatmap <- function(combined_dataset, cell_type = "seurat_p
   cell_composition <- cell_composition[, 2:ncol(cell_composition)]
 
 
-  p <- pheatmap(cell_composition,
-    scale = "none", cluster_rows = F, cluster_cols = F, show_rownames = T,
-    cellheight = 20,
-    border = "white"
+  fig <- plot_ly(
+    x=colnames(cell_composition),y=rownames(cell_composition),
+    z = as.matrix(cell_composition), type = "heatmap",width=800, height=length(rownames(cell_composition))*20
   )
-  return(p)
+
+  return(fig)
 }
