@@ -42,6 +42,3 @@ CellNumber_Batch_Boxplot<-function (combined_dataset, group = "batch_id", sample
 }
 
 
-
-  return(p)
-}

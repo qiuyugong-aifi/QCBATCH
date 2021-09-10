@@ -6,7 +6,9 @@
 \usage{
 BatchDonors_DataAvailablity_Dotsplots(
   rna_dataframe,
-  meta_data = "sample.visitName"
+  meta_data = "sample.visitName",
+  width = 1000,
+  height = 500
 )
 }
 \arguments{
