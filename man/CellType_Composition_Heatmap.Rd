@@ -7,7 +7,8 @@
 CellType_Composition_Heatmap(
   combined_dataset,
   cell_type = "seurat_pbmc_type",
-  group = "pbmc_sample_id"
+  group = "pbmc_sample_id",
+  Sort = "False"
 )
 }
 \arguments{
