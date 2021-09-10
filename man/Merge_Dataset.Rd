@@ -4,7 +4,7 @@
 \alias{Merge_Dataset}
 \title{Title}
 \usage{
-Merge_Dataset(rna_dataframe, filePath = "filePath", Bridging_Control = "FALSE")
+Merge_Dataset(rna_dataframe, filePath = "filePath", Bridging_Control = "False")
 }
 \arguments{
 \item{Bridging_Control}{}

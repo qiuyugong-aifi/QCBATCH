@@ -49,7 +49,7 @@ fetch_bridging_control<-function() {
 
   meta_data_control$filePath<-file_path
   meta_data_control$file_pool<-file_pool
-  meta_data_control$file_keep<-paste0(meta_data_control$file.batchID,"_",meta_data_control$file_pool)
+  meta_data_control$file_keep<-paste0(meta_data_control$file.batchID,"-",meta_data_control$file_pool)
 
 
   #fetch info for bridging control samples
@@ -61,7 +61,7 @@ fetch_bridging_control<-function() {
     file_pool<-c(file_pool,substr(str_split(rna_desc_IMM$file.name[i],'/')[[1]][length(str_split(rna_desc_IMM$file.name[i],'/')[[1]])],6,7))
   }
   rna_desc_IMM$file_pool<-file_pool
-  rna_desc_IMM$file_keep<-paste0(rna_desc_IMM$file.batchID,"_",rna_desc_IMM$file_pool)
+  rna_desc_IMM$file_keep<-paste0(rna_desc_IMM$file.batchID,"-",rna_desc_IMM$file_pool)
 
 
   rna_desc_IMM<-rbind(rna_desc_IMM,meta_data_control[c(colnames(rna_desc_IMM))])

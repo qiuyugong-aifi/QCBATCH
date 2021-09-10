@@ -9,7 +9,15 @@
 #'
 #' @examples
 CellType_Composition_Heatmap <- function(combined_dataset, cell_type = "seurat_pbmc_type", group = "pbmc_sample_id") {
-  cell_composition <- combined_dataset[[]] %>%
+  if (typeof(combined_dataset)=='S4'){
+    combined_dataframe<-combined_dataset[[]]
+
+  }else{
+    combined_dataframe<-combined_dataset
+
+  }
+
+  cell_composition <-combined_dataframe %>%
     dplyr::select((!!as.name(cell_type)), (!!as.name(group))) %>%
     dplyr::group_by((!!as.name(group)), (!!as.name(cell_type))) %>%
     dplyr::tally() %>%

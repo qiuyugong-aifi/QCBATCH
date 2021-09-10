@@ -8,9 +8,21 @@
 #' @export
 #'
 #' @examples
-Merge_Dataset<- function(rna_dataframe,filePath='filePath',Bridging_Control="FALSE") {
+Merge_Dataset<- function(rna_dataframe,filePath='filePath',Bridging_Control="False") {
 
-  if (Bridging_Control=="FALSE"){
+  file_path<-NULL
+  file_pool<-NULL
+  for (i in 1:dim(rna_dataframe)[1]){
+    file_path<-c(file_path,paste0("cache/",rna_dataframe$file.id[i],"/",str_split(rna_dataframe$file.name[i],'/')[1][[1]][6]))
+    file_pool<-c(file_pool,substr(str_split(rna_dataframe$file.name[i],'/')[[1]][length(str_split(rna_dataframe$file.name[i],'/')[[1]])],6,7))
+  }
+  rna_dataframe$file_pool<-file_pool
+  rna_dataframe$file_keep<-paste0(rna_dataframe$file.batchID,"-",rna_dataframe$file_pool)
+
+
+
+
+  if (Bridging_Control=="False"){
     for (i in 1:dim(rna_dataframe)[1]){
       single_object <- read_h5_seurat(rna_dataframe$filePath[i],
                                       feature_names = "name")
@@ -44,9 +56,11 @@ Merge_Dataset<- function(rna_dataframe,filePath='filePath',Bridging_Control="FAL
 
   }
 
-  if (Bridging_Control=="TRUE"){
+  if (Bridging_Control=="True"){
     rna_desc_IMM<-fetch_bridging_control()
-    rna_desc_IMM_SUBSET<-rna_desc_IMM %>% filter (file.batchID %in% rna_dataframe$file.batchID)
+
+
+    rna_desc_IMM_SUBSET<-rna_desc_IMM %>% filter (file_keep %in% rna_dataframe$file_keep)
     for (i in 1:dim(rna_desc_IMM_SUBSET)[1]){
 
       single_object <- read_h5_seurat(rna_desc_IMM_SUBSET$filePath[i],
