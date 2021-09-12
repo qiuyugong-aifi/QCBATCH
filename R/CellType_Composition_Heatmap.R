@@ -37,7 +37,7 @@ CellType_Composition_Heatmap <- function(combined_dataset, cell_type = "seurat_p
 
   fig <- plot_ly(
     x = colnames(cell_composition), y = rownames(cell_composition),
-    z = as.matrix(cell_composition), type = "heatmapgl", width = 1000, height = length(rownames(cell_composition)) * 20
+    z = as.matrix(cell_composition), type = "heatmap", width = 1000, height = length(rownames(cell_composition)) * 20
   )
 
   return(fig)
