@@ -4,12 +4,13 @@
 #' @param group
 #' @param sample_id
 #' @param plotly
+#' @param width
 #'
 #' @return
 #' @export
 #'
 #' @examples
-CellNumber_Batch_Boxplot <- function(combined_dataset, group = "batch_id", sample_id = "pbmc_sample_id", plotly = "False") {
+CellNumber_Batch_Boxplot <- function(combined_dataset,width=1000, group = "batch_id", sample_id = "pbmc_sample_id", plotly = "False") {
   if (typeof(combined_dataset) == "S4") {
     combined_dataframe <- combined_dataset[[]]
   } else {
@@ -44,7 +45,7 @@ CellNumber_Batch_Boxplot <- function(combined_dataset, group = "batch_id", sampl
       text = batch_number %>%
         dplyr::select((!!as.name(sample_id))) %>% dplyr::pull(),
       type = "scatter", mode = "markers", marker = list(size = 8),
-      showlegend = F
+      showlegend = F,width=width
     )
   }
   p <- p %>% toWebGL()
