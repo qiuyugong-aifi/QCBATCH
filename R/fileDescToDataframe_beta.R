@@ -9,8 +9,8 @@
 #'
 #' @examples
 fileDescToDataframe_beta <- function(descriptors,
-                                     keep_labs = FALSE) {
-  descriptors <- descriptors[[1]]
+                                keep_labs = FALSE) {
+  descriptors<-descriptors[[1]]
   assertthat::assert_that(typeof(descriptors) == "list")
   assertthat::assert_that(typeof(keep_labs) == "logical")
 
@@ -21,10 +21,13 @@ fileDescToDataframe_beta <- function(descriptors,
       function(desc) {
         desc <- unlist(desc)
         desc <- desc[!grepl("scheme", names(desc))]
-        names(desc) <- sub("^descriptors.", "", names(desc))
-        if (!keep_labs) {
-          desc <- desc[!grepl("^lab", names(desc))]
-        }
+        names(desc) <- sub("^descriptors.","",names(desc))
+        desc <- desc[!grepl("^specimens", names(desc))]
+        desc <- desc[!grepl("^lab", names(desc))]
+        desc <- desc[!grepl("^emr", names(desc))]
+        desc <- desc[!grepl("^survey", names(desc))]
+        desc <- desc[!grepl("^revision", names(desc))]
+        desc <- desc[!grepl("^file.userTags", names(desc))]
         desc <- as.list(desc)
         df <- as.data.frame(desc)
         df
